@@ -1,0 +1,8 @@
+
+.contador-numero {
+    transition: color 0.2s ease-in-out;
+    font-variant-numeric: tabular-nums;
+}
+.contador-verde {
+    color: #16a34a;
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Saludo personalizado</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="script.js" defer></script>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Manrope', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              500: '#0e9fb7',
+              600: '#0a7490',
+              700: '#085c73',
+            },
+          },
+          keyframes: {
+            pop: {
+              '0%':   { opacity: '0', transform: 'translateY(8px) scale(0.98)' },
+              '100%': { opacity: '1', transform: 'none' },
+            },
+          },
+          animation: {
+            pop: 'pop 0.35s ease-out',
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body class="relative grid min-h-screen place-items-center overflow-hidden bg-slate-100 p-4 font-sans text-slate-900 antialiased dark:bg-slate-950 dark:text-slate-100">
+
+  <div aria-hidden="true" class="pointer-events-none absolute -left-24 -top-24 size-96 rounded-full bg-brand-500/30 blur-3xl dark:bg-brand-500/20"></div>
+  <div aria-hidden="true" class="pointer-events-none absolute -bottom-32 -right-24 size-[28rem] rounded-full bg-emerald-400/25 blur-3xl dark:bg-emerald-500/10"></div>
+
+  <main class="relative w-full max-w-md rounded-3xl bg-white/80 p-6 shadow-xl shadow-slate-900/5 ring-1 ring-slate-900/10 backdrop-blur sm:p-10 dark:bg-slate-900/70 dark:ring-white/10">
+    <h1 class="text-3xl font-extrabold tracking-tight">Saludo personalizado</h1>
+    <p class="mt-2 text-slate-600 dark:text-slate-400">Escribe tu nombre y te damos la bienvenida.</p>
+
+    <div class="mt-8">
+      <label for="name-input" class="mb-2 block text-sm font-semibold text-slate-700 dark:text-slate-300">
+        Tu nombre
+      </label>
+
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <div class="relative flex-1">
+          <input
+            id="name-input"
+            name="name"
+            type="text"
+            autocomplete="given-name"
+            maxlength="60"
+            placeholder="Ej. María"
+            aria-describedby="greeting-output"
+            class="peer w-full rounded-xl border border-slate-300 bg-white py-3 pl-11 pr-4 transition placeholder:text-slate-400 focus:border-brand-500 focus:outline-none focus:ring-4 focus:ring-brand-500/20 aria-[invalid=true]:border-red-500 aria-[invalid=true]:focus:ring-red-500/20 motion-reduce:transition-none dark:border-slate-700 dark:bg-slate-950 dark:placeholder:text-slate-500">
+
+          <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"
+               class="pointer-events-none absolute left-3.5 top-1/2 size-5 -translate-y-1/2 text-slate-400 transition-colors peer-focus:text-brand-500 peer-aria-[invalid=true]:text-red-500">
+            <circle cx="12" cy="8" r="4"/>
+            <path d="M4 21a8 8 0 0 1 16 0"/>
+          </svg>
+        </div>
+
+        <button
+          id="greet-button"
+          type="button"
+          class="rounded-xl bg-brand-600 px-6 py-3 font-semibold text-white shadow-lg shadow-brand-600/25 transition hover:bg-brand-700 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-500/40 active:scale-95 motion-reduce:transition-none motion-reduce:active:scale-100">
+          Saludar
+        </button>
+      </div>
+    </div>
+    <p
+      id="greeting-output"
+      role="status"
+      aria-live="polite"
+      class="mt-6 min-h-14 rounded-2xl px-4 py-3 text-lg font-semibold data-[state=error]:bg-red-50 data-[state=success]:bg-emerald-50 data-[state=error]:text-base data-[state=error]:text-red-700 data-[state=success]:text-emerald-800 motion-safe:data-[state=success]:animate-pop dark:data-[state=error]:bg-red-500/10 dark:data-[state=success]:bg-emerald-500/10 dark:data-[state=error]:text-red-300 dark:data-[state=success]:text-emerald-300"></p>
+  </main>
+</body>
+</html>
