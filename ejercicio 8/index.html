@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de compras</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="min-h-screen flex items-center justify-center bg-slate-100">
+
+    <main class="bg-white p-8 rounded-xl shadow-lg w-full max-w-md">
+
+        <h1 class="text-2xl font-bold text-slate-800 mb-6">
+            Mi lista de compras
+        </h1>
+
+        <label for="product-input" class="block mb-2 font-medium">
+            Nombre del producto
+        </label>
+
+        <section class="flex gap-2">
+
+            <input
+                type="text"
+                id="product-input"
+                placeholder="Ejemplo: Pan"
+                class="flex-1 min-w-0 border border-slate-300 rounded-lg p-3 outline-none"
+            >
+
+            <button
+                id="add-button"
+                class="bg-blue-600 text-white px-4 rounded-lg hover:bg-blue-700"
+            >
+                Agregar
+            </button>
+
+        </section>
+
+        <p id="message" class="text-sm mt-3"></p>
+
+        <h2 class="font-semibold text-slate-700 mt-6 mb-3">
+            Productos:
+        </h2>
+
+        <ul id="product-list" class="space-y-2">
+        </ul>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

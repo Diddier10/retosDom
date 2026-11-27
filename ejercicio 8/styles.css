@@ -1,0 +1,23 @@
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#product-input {
+    transition: border-color 0.3s ease;
+}
+
+#message.error {
+    color: #dc2626;
+}
+
+#message.success {
+    color: #16a34a;
+}
+
+#product-list li {
+    background-color: #f1f5f9;
+    padding: 10px;
+    border-radius: 8px;
+    color: #334155;
+}
