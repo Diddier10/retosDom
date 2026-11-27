@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambiador de color</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="min-h-screen bg-slate-100 flex items-center justify-center p-6">
+
+    <main class="w-full max-w-xl bg-white rounded-2xl shadow-lg p-8">
+
+        <h1 class="text-2xl font-bold text-slate-800 mb-2">
+            Cambiador de color
+        </h1>
+
+        <p class="text-slate-500 mb-6">
+            Selecciona un color para modificar el fondo de tu tarjeta.
+        </p>
+
+        <label for="color-select" class="block text-sm font-semibold text-slate-700 mb-2">
+            Elige un color
+        </label>
+
+        <select
+            id="color-select"
+            class="w-full border border-slate-300 rounded-xl p-3 outline-none focus:ring-2 focus:ring-blue-500"
+        >
+            <option value="" selected disabled>Selecciona un color</option>
+            <option value="blue">Azul</option>
+            <option value="green">Verde</option>
+            <option value="yellow">Amarillo</option>
+            <option value="pink">Rosa</option>
+        </select>
+
+        <section class="mt-6">
+
+            <h2 class="text-lg font-semibold text-slate-800 mb-3">
+                Mi tarjeta
+            </h2>
+
+            <article
+                id="color-card"
+                class="bg-slate-200 rounded-xl p-6 transition-colors duration-300"
+            >
+                <h3 class="text-xl font-bold text-slate-800 mb-2">
+                    ¡Hola! Esta es mi tarjeta
+                </h3>
+
+                <p class="text-slate-700">
+                    Puedes cambiar mi color de fondo utilizando
+                    las opciones del menú superior.
+                </p>
+            </article>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
